@@ -5,10 +5,13 @@ pipeline {
     options {
         ansiColor('xterm')
     }
+    enviroment {
+        IMAGE = 'debian:10.8'
+    }
     stages {
         stage('trivy') {
             steps {
-                sh 'trivy image --format json --output trivy-results.json debian:latest'
+                sh 'trivy image --format json --output trivy-results.json ${IMAGE}'
             }        
             post {
                 always {
