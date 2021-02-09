@@ -2,7 +2,7 @@
 
 pipeline {
     stages {
-        stage ('trivy') {
+        stage('trivy') {
             script {
                 sh 'trivy image --format json --output trivy-results.json debian:latest'
             }        
