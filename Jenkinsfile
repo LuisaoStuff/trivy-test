@@ -5,7 +5,7 @@ pipeline {
     options {
         ansiColor('xterm')
     }
-    enviroment {
+    environment {
         IMAGE = 'debian:10.8'
     }
     stages {
